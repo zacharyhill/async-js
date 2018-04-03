@@ -23,6 +23,11 @@ Contraints:
 
 const fs = require('fs');
 
+// countWords is a helper function... it helps you convert a paragraph into 
+// the string you need
+
+// EXAMPLE USAGE 
+// countWords('hello world hello me') --> 'hello: 2\nme:1\nworld: 1\n'
 const countWords = function(paragraph) {
   let words = paragraph.trim('.').split(' ');
 
@@ -48,6 +53,8 @@ const countWords = function(paragraph) {
   return outputString;
 }
 
+// inputFile: paragraph to read
+// outputFile: path to write resulting .txt to
 var countAllWords = function(inputFile, outputFile) {
   /* WRITE CODE HERE */ 
   fs.readFile(inputFile, 'utf8', function(err, data) {
